@@ -1,0 +1,19 @@
+{% for post in paginator.posts %}
+  {% include post_header.html %}
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+    <nav class="blog-pagination" role="pagination">
+
+            {% if paginator.previous_page %}
+                <a class="newer-posts pagination-nav" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">
+                    <i class="fa fa-angle-double-left"></i>
+                </a>
+            {% endif %}
+            <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+            {% if paginator.next_page %}
+                <a class="older-posts pagination-nav" href="{{ paginator.next_page_path | prepend: site.baseurl }}"><i class="fa fa-angle-double-right"></i></a>
+            {% endif %}
+        
+    </nav>
+{% endif %}

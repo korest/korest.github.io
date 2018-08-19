@@ -1,0 +1,24 @@
+- name: "Languages:"
+  value: 
+    - "Java"
+    - "Kotlin"
+    - "Go"
+- name: "Frameworks:"
+  value: 
+    - "Spring(Boot, MVC, Data, AOP, Social, Data REST, REST Docs, Integration)"
+    - "Amazon (DynamoDB, SQS, SNS, Lambda, S3)"
+    - "NodeJS"
+- name: "Databases:"
+  value: 
+    - "MySQL"
+    - "MongoDb"
+    - "DynamoDb"
+- name: "Tools:"
+  value: 
+    - "Maven"
+    - "Gradle" 
+    - "Lombok"
+    - "Git"
+    - "Jira"
+    - "Jenkins" 
+    - "Slack"

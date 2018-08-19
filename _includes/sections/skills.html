@@ -1,0 +1,23 @@
+<h1>
+    <span data-i18n="skills.my_skills">Skills
+    </span>
+</h1>
+
+<ul>
+{% for skill in site.data.index.skills %}
+    <li>
+        {{ skill.name }}
+        {% if skill.value.size > 1 %}
+            <ul>
+            {% for skill_value in skill.value %}
+                <li>
+                {{ skill_value }}
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            {{ skill.value[0] }}
+        {% endif %}
+    </li>
+{% endfor %}
+</ul>

@@ -1,0 +1,15 @@
+- name: "Crowdfunding platform"
+  descr: "Platform to fund various projects"
+  involvment:
+    - Designed microservices architecture
+    - Implemented functionality
+  technologies: "Java 8, Spring Cloud, Spring Data REST, Spring Security, Spring Data, Spring MVC,
+   Spring AOP, MongoDb, Gradle, Lombok, Jira, Git, Jenkins, Slack"
+- name: "Switzerland shopping mall loyalty system"
+  descr: "Shopping mall customers promotions system"
+  involvment:
+    - Designed a few components of the system
+    - Implemented functionality and fixed bugs
+  technologies: "Java 8, Spring Data REST, Spring Data, Spring MVC, Spring REST
+Docs, Spring AOP, Spring Social, MongoDb, Amazon S3, Amazon SNS, Gradle,
+Gatling, Lombok, Jira, Git, Jenkins, Slack."
