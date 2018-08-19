@@ -5,8 +5,8 @@
 #
 title: orestkyrylchuk
 email: orestkyrylchuk@gmail.com
-description: A simple and awesome blog theme powered by jekyll.
-url: https://korest.github.io/ # the base hostname & protocol for your site
+description: A simple and awesome personal blog powered by jekyll.
+url: https://korest.github.io # the base hostname & protocol for your site
 keywords: ["Java", "Kotlin", "AWS"]
 
 #
@@ -38,13 +38,13 @@ kramdown:
 #
 owner:
   name: Orest Kyrylchuk
-  avatar: lorenz-attractor.png
+  avatar: blog-logo.png
   job: "Software Development Engineer at Amazon"
   bio: "<br>Software Engineer with 5 years of experience
     <br>My main areas are Java server side applications and Android applications
     <br>Have strong backgroung in algorithms and data structures. 
     <br>Originaly from Lviv, Ukraine but currently live in Vancouver, Canada."
-  #disqus-shortname: korest
+  disqus-shortname: korest
   google:
     analytics: UA-124218867-1
   github: korest #username
