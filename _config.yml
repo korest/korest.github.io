@@ -39,11 +39,12 @@ kramdown:
 owner:
   name: Orest Kyrylchuk
   avatar: blog-logo.png
-  job: "Software Development Engineer at Amazon"
+  job: "Software Engineer"
   bio: "<br>Software Engineer with 5 years of experience
-    <br>My main areas are Java server side applications and Android applications
-    <br>Have strong backgroung in algorithms and data structures. 
-    <br>Originaly from Lviv, Ukraine but currently live in Vancouver, Canada."
+    <br>Most of my experience is connected to server side applications.
+    <br>I'm interested in highly loaded systems, microservice and serverless architecture projects.
+    <br>Have strong background in algorithms and data structures.
+    <br>Originally from Lviv, Ukraine, but currently live in Vancouver, Canada."
   disqus-shortname: orestkyrylchuk
   google:
     analytics: UA-124218867-1
