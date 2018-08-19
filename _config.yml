@@ -40,10 +40,7 @@ owner:
   name: Orest Kyrylchuk
   avatar: blog-logo.png
   job: "Software Engineer"
-  bio: "<br>Software Engineer with 5 years of experience
-    <br>Most of my experience is connected to server side applications.
-    <br>I'm interested in highly loaded systems, microservice and serverless architecture projects.
-    <br>Have strong background in algorithms and data structures.
+  bio: "<br><b>5+</b> years of experience.
     <br>Originally from Lviv, Ukraine, but currently live in Vancouver, Canada."
   disqus-shortname: orestkyrylchuk
   google:
