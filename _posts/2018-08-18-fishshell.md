@@ -6,24 +6,26 @@ tags: [fishshell, tools]
 categories: [Programming]
 comments: true
 ---
-To be honest before using fishshell I didn't use any other shell except bash and it was totally fine for me. 
-Around ~6 months ago my friend suggested me to switch and it was totally worth it. 
-Below I will list some pros and cons that work for me (some of them are pretty obvious). 
-This article is more like a list of notes than structured material.
+> Disclaimer: This post looks more like a list of notes than structured material.
+
+To be honest before using `fishshell` I only used bash and it satisfied my needs. 
+Around ~6 months ago my friend suggested me to try `fishshell` instead and it was totally worth it. 
+Below I will list some pros and cons that I found for myself (some of them are pretty straightforward and obvious).
 
 #### Pros
-* The best feature is auto suggestions. They are based on your history and previous completions. 
-Also statistics on used commands are taken into consideration so fishshell makes the best choice.
+* [Autosuggestions](https://fishshell.com/docs/current/tutorial.html#tut_autosuggestions): they are based on your history and previous completions. 
+Statistics on used commands is taken into consideration and `fishshell` makes the best choice.
 ![](assets/images/fishshell/fish-1.png)
-* Completions - you just press Tab and in case it has a few options for you, you'll see a list
-* Configuring `$PATH`  is smooth. Just write `set -U fish_user_paths /usr/local/bin $fish_user_paths` to append path
-* Documentation is perfect for [fishshell](https://fishshell.com/docs/current/index.html)
-* Everything is configured OOTB
+* [Completions](https://fishshell.com/docs/current/tutorial.html#tut_tab_completions): press Tab and it will either complete single option or display a list
+* [$PATH](https://fishshell.com/docs/current/tutorial.html#tut_path): write `set -U fish_user_paths /usr/local/bin $fish_user_paths` to append `/usr/local/bin`.
+It will affect current and all future sessions
+* [Documentation](https://fishshell.com/docs/current/index.html): anything can be found there
+* Configuration: everything is OOTB
 
 #### Cons
-* There is no way to disable auto suggestions
+* Autosuggestions: No way to disable them and rarely they migh be annoying
 
 #### Conclusion
 
-I would definitely recommend fishshell to try.
-Start with `brew install fish` and visit [fishshell](https://fishshell.com/docs/current/index.html) to get more info.
+I would definitely recommend it to try.
+Start with `brew install fish` and visit [fishshell](https://fishshell.com/docs/current/tutorial.html#tut_learning_Fish) to learn more.
