@@ -1,0 +1,57 @@
+#
+###################################
+# Site wide configuration
+####################################
+#
+title: orestkyrylchuk
+email: orestkyrylchuk@gmail.com
+description: A simple and awesome blog theme powered by jekyll.
+url: https://korest.github.io/korest # the base hostname & protocol for your site
+keywords: ["Java", "Kotlin", "AWS"]
+
+#
+###################################
+# Jekyll configuration
+####################################
+#
+plugins: [jekyll-paginate]
+
+timezone:          America/Vancouver
+markdown:          kramdown
+highlighter:       rouge
+excerpt_separator: <!--more-->
+permalink:         /:title
+paginate: 5
+paginate_path: /articles/page/:num/
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+#
+###################################
+# Site Owner configuration
+####################################
+#
+owner:
+  name: Orest Kyrylchuk
+  avatar: lorenz-attractor.png
+  job: "Software Development Engineer at Amazon"
+  bio: "<br>Software Engineer with 5 years of experience
+    <br>My main areas are Java server side applications and Android applications
+    <br>Have strong backgroung in algorithms and data structures. 
+    <br>Originaly from Lviv, Ukraine but currently live in Vancouver, Canada."
+  #disqus-shortname: korest
+  google:
+    analytics: UA-124218867-1
+  github: korest #username
+  stackoverflow: 2055854/KOrest
+  linkedin: orest-kyrylchuk-3718983b #username
+  instagram: orest.kyrylchuk
+
+sass:
+  style: compressed
+
