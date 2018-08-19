@@ -17,13 +17,13 @@ Below I will list some pros and cons that I found for myself (some of them are p
 Statistics on used commands is taken into consideration and `fishshell` makes the best choice.
 ![](assets/images/fishshell/fish-1.png)
 * [Completions](https://fishshell.com/docs/current/tutorial.html#tut_tab_completions): press Tab and it will either complete single option or display a list
-* [$PATH](https://fishshell.com/docs/current/tutorial.html#tut_path): write `set -U fish_user_paths /usr/local/bin $fish_user_paths` to append `/usr/local/bin`.
+* [$PATH](https://fishshell.com/docs/current/tutorial.html#tut_path): enter `set -U fish_user_paths /usr/local/bin $fish_user_paths` to append `/usr/local/bin`.
 It will affect current and all future sessions
 * [Documentation](https://fishshell.com/docs/current/index.html): anything can be found there
 * Configuration: everything is OOTB
 
 #### Cons
-* Autosuggestions: No way to disable them and rarely they migh be annoying
+* [Autosuggestions](https://fishshell.com/docs/current/tutorial.html#tut_autosuggestions): No way to disable them and rarely they migh be annoying
 
 #### Conclusion
 
