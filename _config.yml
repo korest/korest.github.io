@@ -6,7 +6,7 @@
 title: orestkyrylchuk
 email: orestkyrylchuk@gmail.com
 description: A simple and awesome blog theme powered by jekyll.
-url: https://korest.github.io/korest # the base hostname & protocol for your site
+url: https://korest.github.io/ # the base hostname & protocol for your site
 keywords: ["Java", "Kotlin", "AWS"]
 
 #
