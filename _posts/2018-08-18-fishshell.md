@@ -19,7 +19,8 @@ Statistics on used commands is taken into consideration and `fishshell` makes th
 * [$PATH](https://fishshell.com/docs/current/tutorial.html#tut_path): enter `set -U fish_user_paths /usr/local/bin $fish_user_paths` to append `/usr/local/bin`.
 It will affect current and all future sessions
 * [Documentation](https://fishshell.com/docs/current/index.html): anything can be found here
-* Configuration: everything is OOTB
+* Configuration: mostly everything is OOTB, but if you do need to do some customizations there is an easy way just type `fish_shell` in shell and you'll see config UI.
+![](assets/images/fishshell/fish-2.png)
 
 #### Cons
 * [Autosuggestions](https://fishshell.com/docs/current/tutorial.html#tut_autosuggestions): No way to disable them and rarely they migh be annoying
