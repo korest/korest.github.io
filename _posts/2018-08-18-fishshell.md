@@ -10,7 +10,7 @@ comments: true
 
 To be honest, before using `fishshell` I only used `bash` and it satisfied my needs, but around ~6 months ago my friend suggested me to try `fishshell` instead and it was totally worth it. 
 Below I'm going to list some pros and cons that I found for myself (some of them are pretty straightforward and obvious).
-
+<!--more-->
 #### Pros
 * [Autosuggestions](https://fishshell.com/docs/current/tutorial.html#tut_autosuggestions): they are based on your history and previous completions. 
 Statistics on used commands is taken into consideration and `fishshell` makes the best choice.
