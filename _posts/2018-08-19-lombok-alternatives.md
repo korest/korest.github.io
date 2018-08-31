@@ -1,20 +1,21 @@
 ---
 layout: post
 title:  "Is there an alternative to Lombok?"
-date:   2018-08-19 21:00:00
+date:   2018-08-29 21:00:00
 tags: [lombok, autovalue, immutables, tools]
 categories: [Programming]
 comments: true
 ---
 
 <br>For the last few years [Lombok](https://projectlombok.org/) became one of the most used java libraries.
-<br>Unfortunately with the latest releases of Java it still has some problems [Java 9](https://github.com/rzwitserloot/lombok/issues/985), [Java 10](https://github.com/rzwitserloot/lombok/issues/1572).
-<br>I won't list all the advantages and disadvantages of it, but rather show some alternatives that we have.
-<br>There are two libraries that provide somehow similar functionality to `Lombok` and could be used instead:
+<br>Unfortunately with the latest releases of Java it has some problems [Java 9](https://github.com/rzwitserloot/lombok/issues/985), [Java 10](https://github.com/rzwitserloot/lombok/issues/1572).
+<br>I won't list all the advantages and disadvantages of it, but rather show some alternative libraries:
 * [Immutables](https://immutables.github.io/)
 * [AutoValue](https://github.com/google/auto/blob/master/value/userguide/index.md) 
 <!--more-->
+
 ### I. Lombok
+
 <br>Let's start with already known `Lombok` and create some basic classes with simple functionality.
 <br>Then we will try to do the same using other two libraries.
 
@@ -385,6 +386,8 @@ public void whenWorkBuilderSerializeDeserializeThenWork() throws IOException {
 ~~~
 
 ## Conclusion
-<br>As we can see everything that we had with `Lombok` could be re-implemented using those two libraries.
-<br>I don't say that we can cover all `Lombok`'s functionality and for sure there are some features that wouldn't work.
-<br>Anyway, I would definitely recommend them to try.
+<br>As we can all the examples that we implemented using `Lombok` could be done using two other libraries.
+<br>I don't say that we could cover all `Lombok`'s functionality and for sure there are some features that wouldn't work.
+<br>Anyway, I would definitely recommend to try those libraries.
+
+<br>Project sources on github: https://github.com/korest/LombokAlternatives
