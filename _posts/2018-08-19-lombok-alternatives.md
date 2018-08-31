@@ -390,4 +390,4 @@ public void whenWorkBuilderSerializeDeserializeThenWork() throws IOException {
 <br>I don't say that we could cover all `Lombok`'s functionality and for sure there are some features that wouldn't work.
 <br>Anyway, I would definitely recommend to try those libraries.
 
-<br>Project sources on github: https://github.com/korest/LombokAlternatives
+<br>Project sources on github: [LombokAlternatives](https://github.com/korest/LombokAlternatives)
