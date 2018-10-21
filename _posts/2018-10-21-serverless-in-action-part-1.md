@@ -336,7 +336,7 @@ Authorization
 ----
 The last but not least lambda function is `authorization`.
 It is implemented as API Gateway custom `authorizer`.
-It validates the provided token and returns generated the policy to allow or deny access to the resource, but for simplicity, we won't have different scopes and it always either `allow` or `401`.
+It validates the provided token and returns generated policy to allow or deny access to the resource, but for simplicity, we won't have different scopes and it always either `allow` or `401`.
 
 JWT token is parsed at first with the same [jwt-go](https://github.com/dgrijalva/jwt-go) library as above:
 ~~~ go
