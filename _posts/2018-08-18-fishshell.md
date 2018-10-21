@@ -8,6 +8,8 @@ comments: true
 ---
 > Disclaimer: This post is more like a list of notes rather than structured material.
 
+Introduction
+----
 To be honest, before using `fishshell` I only used `bash` and it satisfied my needs, but around ~6 months ago my friend suggested me to try `fishshell` instead and it was totally worth it. 
 Below I'm going to list some pros and cons that I found for myself (some of them are pretty straightforward and obvious).
 <!--more-->
@@ -23,9 +25,10 @@ It will affect current and all future sessions
 ![](assets/images/fishshell/fish-2.png)
 
 #### Cons
-* [Autosuggestions](https://fishshell.com/docs/current/tutorial.html#tut_autosuggestions): No way to disable them and rarely they migh be annoying
+* [Autosuggestions](https://fishshell.com/docs/current/tutorial.html#tut_autosuggestions): No way to disable them and is some rare cases they might be annoying.
 
-#### Conclusion
+Conclusion
+----
+I would definitely recommend to give it a try.
 
-<br>I would recommend to give it a try.
-<br>Start with `brew install fish` and visit [fishshell](https://fishshell.com/docs/current/tutorial.html#tut_learning_Fish) to learn more.
+Start with `brew install fish` and visit [fishshell](https://fishshell.com/docs/current/tutorial.html#tut_learning_Fish) to learn more.
