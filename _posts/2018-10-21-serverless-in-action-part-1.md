@@ -7,7 +7,7 @@ categories: [Programming]
 comments: true
 ---
 
-> Part 0: Intro could be found [here](https://korest.github.io/serverless-in-action-part-0)
+> Part 0: Intro could be found [here](https://korest.github.io/serverless-in-action-part-0).
 
 Introduction
 ----
@@ -396,9 +396,9 @@ Authorization:
 * JWT signing key is passed with environment variables.
 
 ### Conclusion
-Using Golang for lambda functions was pretty smooth.
-In the beginning, it's a bit hard to get used to syntax after Java world, but after some time development is fast enough.
-All the logic is covered with tests. Everything could be found in my github [repository]().
+Using Golang for lambda functions is pretty smooth. It's pretty easy to find some help and needed libraries on the Internet.
+In the beginning, it was a bit hard to get used to syntax after Java world, but after some time development is fast enough.
+All the logic is covered with unit tests. Everything could be found in my [github repository](https://github.com/korest/AuthLambdas).
 
 What's next?
 * [Part 2: CRUD]()

@@ -50,7 +50,7 @@ We have 3 parts on the schema above:
 
 All the data would be stored in DynamoDb.
 
-Let's begin with [Part 1: Auth]().
+Let's begin with [Part 1: Auth](https://korest.github.io/serverless-in-action-part-0).
 
 Other parts:
 * [Part 2: CRUD]()
