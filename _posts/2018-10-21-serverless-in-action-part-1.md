@@ -7,7 +7,7 @@ categories: [Programming]
 comments: true
 ---
 
-> Part 0: Intro could be found [here](https://korest.github.io/serverless-in-action-part-0).
+> Part 0: Intro could be found [here](https://orestkyrylchuk.com/serverless-in-action-part-0).
 
 Introduction
 ----
