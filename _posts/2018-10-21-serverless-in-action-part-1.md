@@ -118,8 +118,7 @@ input := &dynamodb.QueryInput{
 ~~~
 Table and index names are passed to lambda function through environment variables and then retrieved with `os.Getenv(TABLE_NAME)` and `os.Getenv(INDEX_NAME)`.
 
-To store password in database it's encrypted with the key from [AWS Key Managment Service (KMS)](https://aws.amazon.com/kms/).
-Definition of it in our `serverless.yaml`:
+An encrypted password should be stored in the database and for that we use key from [AWS Key Managment Service (KMS)](https://aws.amazon.com/kms/):
 ~~~ yaml
 DefaultKMSKey:
   Type: AWS::KMS::Key
