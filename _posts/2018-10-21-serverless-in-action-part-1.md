@@ -394,7 +394,8 @@ Authorization:
 * It is triggered by API Gateway, so we there is no `events` section.
 * JWT signing key is passed with environment variables.
 
-### Conclusion
+Conclusion
+----
 Using Golang for lambda functions is pretty smooth. It's pretty easy to find some help and needed libraries on the Internet.
 In the beginning, it was a bit hard to get used to syntax after Java world, but after some time development is fast enough.
 All the logic is covered with unit tests. Everything could be found in my [github repository](https://github.com/korest/AuthLambdas).
