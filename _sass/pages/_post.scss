@@ -46,7 +46,9 @@ section.post {
 
 // Post title
 .post-title {
-
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .post-title-link {
