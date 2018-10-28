@@ -163,7 +163,7 @@ public void whenUserBuilderThenImmutableUserIsCreated() {
 }
 ~~~
 
-Now we want to modify our instance and for that there is already a method generated for us called `ImmutableUser.copyOf()`.
+Now we want to modify our instance and for that there is already a method generated for us called `ImmutableUser.builder().from`.
 ~~~ java
 @Test
 public void whenUserModifiedThenNewUserIsCreated() {
@@ -173,8 +173,9 @@ public void whenUserModifiedThenNewUserIsCreated() {
                                            .age(31)
                                            .cars(Arrays.asList("BMW", "Audi"))
                                            .build();
-    final User modifiedUser = ImmutableUser.copyOf(user)
-            .withName("Modified User");
+    final User modifiedUser = ImmutableUser.builder().from(user)
+            .name("Modified User")
+            .build();
 
     assertNotSame(user, modifiedUser);
     assertNotEquals(user.getName(), modifiedUser.getName());
