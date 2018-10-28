@@ -394,6 +394,44 @@ Authorization:
 * It is triggered by API Gateway, so we there is no `events` section.
 * JWT signing key is passed with environment variables.
 
+Build & Deploy
+----
+To build it and deploy there is a `makefile` which does everything (build, test, deploy) for all 3 lambda functions together:
+```
+.PHONY: build
+build:
+	dep ensure -v
+	env GOOS=linux go build -ldflags="-s -w" -o bin/authentication authentication/main.go
+	env GOOS=linux go build -ldflags="-s -w" -o bin/authorization authorization/main.go
+	env GOOS=linux go build -ldflags="-s -w" -o bin/registration registration/main.go
+
+.PHONY: test
+test:
+	go test ./...
+
+.PHONY: clean
+clean:
+	rm -rf ./bin ./vendor Gopkg.lock
+
+.PHONY: deploy
+deploy: clean build test
+	sls deploy --verbose
+```
+
+The last step of the `makefile` has `sls deploy --verbose` which gives us: 
+![](assets/images/serverless-in-action/auth_deploy.png)
+* Two endpoints were generated for `registration` and `authentication` lambda functions.
+* Outputs from the stack such as lambda functions arns and s3 bucket name created by serverless framework.
+
+Using [Postman](https://www.getpostman.com/) we can verify that it works:
+First we call `registration` function to create a new account:
+![](assets/images/serverless-in-action/auth_register.png)
+The first call with the cold start gives us up to 2s latency, but after it usually takes ~100-200ms.
+
+The same for `authentication` function:
+![](assets/images/serverless-in-action/auth_token.png)
+Same here, the first call with the cold start gives us up to 1.5s latency, but after it usually takes ~100ms.
+
 Conclusion
 ----
 Using Golang for lambda functions is pretty smooth. It's pretty easy to find some help and needed libraries on the Internet.
