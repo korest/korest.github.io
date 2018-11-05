@@ -376,7 +376,7 @@ func createPolicy(accountId, effect, resource string) events.APIGatewayCustomAut
 				{
 					Action:   []string{"execute-api:Invoke"},
 					Effect:   effect,
-					Resource: []string{resource},
+					Resource: []string{"*"},
 				},
 			},
 		},
@@ -436,7 +436,7 @@ Conclusion
 ----
 Using Golang for lambda functions is pretty smooth. It's pretty easy to find some help and needed libraries on the Internet.
 In the beginning, it was a bit hard to get used to syntax after Java world, but after some time development is fast enough.
-All the logic is covered with unit tests. Everything could be found in my [github repository](https://github.com/korest/AuthLambdas).
+All the logic is covered with unit tests. Everything could be found in my [github repository](https://github.com/korest/WaitlistAppAuthLambdas).
 
 What's next?
 * [Part 2: CRUD]()
