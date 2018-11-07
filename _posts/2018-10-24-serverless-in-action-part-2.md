@@ -24,7 +24,7 @@ Comparing to Go, Kotlin has bigger binary file and slower cold start. There are 
 
 We have the same `serverless.yaml` file for both lambda functions.
 ```yaml
-service: CrudLambdas
+service: WaitlistAppCrudLambdas
 
 provider:
   name: aws
