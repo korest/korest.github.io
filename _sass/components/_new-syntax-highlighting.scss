@@ -5,11 +5,11 @@ pre, code {
   font-size: ($font-size-base - 2);
 }
 
-.highlight table td { padding: 1em; }
+.highlight table td { padding: 0; }
 .highlight table pre { margin: 0; }
 .highlight, .highlight .w {
   color: #586e75;
-  padding: 0.5em;
+  padding: 0 0 0 0.5em;
 }
 .highlight .err {
   color: #002b36;
