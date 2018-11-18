@@ -420,6 +420,7 @@ deploy: clean build test
 
 The last step of the `makefile` has `sls deploy --verbose` which gives us: 
 ![](assets/images/serverless-in-action/auth_deploy.png)
+* Size of the .zip file was 8.71 Mb
 * Two endpoints were generated for `registration` and `authentication` lambda functions.
 * Outputs from the stack such as lambda functions arns and s3 bucket name created by serverless framework.
 

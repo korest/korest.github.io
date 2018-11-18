@@ -416,6 +416,7 @@ package:
 ```
 After we execute `sls deploy --verbose` we see next output:
 ![](assets/images/serverless-in-action/crud_deploy.png)
+* Size of the .zip file was 11.06 Mb
 * Eight endpoints were generated for `Waitlist` and `Waitee` lambda functions.
 * Outputs from the stack such as lambda functions arns and s3 bucket name created by serverless framework.
 
