@@ -21,7 +21,7 @@ It has two lambda functions:
 Probably your first thoughts are that we could send notifications directly from the producer function itself.
 The problem here is that `notify` operation is heavy and it could take too much time to send the notification to all waitees (maximum lambda execution time per request is [15 minutes](https://docs.aws.amazon.com/lambda/latest/dg/limits.html)).
 This approach is not scalable and it would be a bottleneck. 
-Moving notification sending functionality to separate function would solve the back pressure. 
+Moving process notification functionality to separate function would be much more [scalable](https://docs.aws.amazon.com/lambda/latest/dg/scaling.html). 
 
 For these two lambda functions, I have chosen [NodeJs](https://nodejs.org/en/blog/release/v8.11.3/) runtime with [typescript](https://www.typescriptlang.org/) which is more comfortable for engineers who got used to static typed languages.
 NodeJs runtime gives us better cold start comparing to `java` and much smaller package to deploy.
