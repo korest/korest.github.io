@@ -13,7 +13,7 @@ Introduction
 ----
 We start our `dive deep` into the architecture from `Auth` section.
 To remind you from the previous part it has the next design:
-![](assets/images/serverless-in-action/auth.png)
+![](assets/images/serverless-in-action/auth.jpg)
 <!--more-->
 It has 3 separate lambda functions:
 * Registration - which has the functionality to register new account.
@@ -419,18 +419,18 @@ deploy: clean build test
 ```
 
 The last step of the `makefile` has `sls deploy --verbose` which gives us: 
-![](assets/images/serverless-in-action/auth_deploy.png)
+![](assets/images/serverless-in-action/auth_deploy.jpg)
 * Size of the .zip file was 8.71 Mb
 * Two endpoints were generated for `registration` and `authentication` lambda functions.
 * Outputs from the stack such as lambda functions arns and s3 bucket name created by serverless framework.
 
 Using [Postman](https://www.getpostman.com/) we can verify that it works:
 First we call `registration` function to create a new account:
-![](assets/images/serverless-in-action/auth_register.png)
+![](assets/images/serverless-in-action/auth_register.jpg)
 The first call with the cold start gives us up to 2s latency, but after it usually takes ~100-200ms.
 
 The same for `authentication` function:
-![](assets/images/serverless-in-action/auth_token.png)
+![](assets/images/serverless-in-action/auth_token.jpg)
 Same here, the first call with the cold start gives us up to 1.5s latency, but after it usually takes ~100ms.
 
 Conclusion

@@ -17,13 +17,13 @@ Pros
 ----
 * [Autosuggestions](https://fishshell.com/docs/current/tutorial.html#tut_autosuggestions): they are based on your history and previous completions. 
 Statistics on used commands is taken into consideration and `fishshell` makes the best choice.
-![](assets/images/fishshell/fish-1.png)
+![](assets/images/fishshell/fish-1.jpg)
 * [Completions](https://fishshell.com/docs/current/tutorial.html#tut_tab_completions): press Tab and it will either complete single option or display a list
 * [$PATH](https://fishshell.com/docs/current/tutorial.html#tut_path): enter `set -U fish_user_paths /usr/local/bin $fish_user_paths` to append `/usr/local/bin`.
 It will affect current and all future sessions
 * [Documentation](https://fishshell.com/docs/current/index.html): anything can be found here
 * Configuration: mostly everything is OOTB, but if you do need to do some customizations there is an easy way just type `fish_shell` in shell and you'll see config UI.
-![](assets/images/fishshell/fish-2.png)
+![](assets/images/fishshell/fish-2.jpg)
 
 Cons
 ----

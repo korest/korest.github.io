@@ -28,7 +28,7 @@ Our idea is to automate this process and build the waitlist application which wo
 * Notify customers
 
 Using [draw.io](https://www.draw.io/) we created the next architecture for our application:
-![](assets/images/serverless-in-action/app-architecture.png)
+![](assets/images/serverless-in-action/app-architecture.jpg)
 
 We have 3 parts on the schema above:
 1. Auth:

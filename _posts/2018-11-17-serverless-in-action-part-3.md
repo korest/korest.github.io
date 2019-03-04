@@ -12,7 +12,7 @@ comments: true
 Introduction
 ----
 Here we would implement the last, but not the least part of our application - notifying customers that they should come to the place that they waited for:
-![](assets/images/serverless-in-action/notification.png)
+![](assets/images/serverless-in-action/notification.jpg)
 It has two lambda functions:
 * Product - sends waitees that should be notified into the SQS. 
 * Consumer - processes SQS and sends notifications to the waitees.
@@ -196,8 +196,8 @@ functions:
 
 Build & Deploy
 ----
-To deploy our lambda functions we execute `sls deploy --verbose` we see next output:
-![](assets/images/serverless-in-action/notification_deploy.png)
+To deploy our lambda functions we execute `sls deploy --verbose` and see next output:
+![](assets/images/serverless-in-action/notification_deploy.jpg)
 * Size of the .zip file was 1.75 Mb
 * Two separated lambda function were deployed.
 

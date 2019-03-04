@@ -12,7 +12,7 @@ comments: true
 Introduction
 ----
 This section is about the core of our application - CRUD lambda functions. Remind you the architecture:
-![](assets/images/serverless-in-action/crud.png)
+![](assets/images/serverless-in-action/crud.jpg)
 On the design above we have:
 * CRUD Waitlist - lambda function to handle all the operations on the waitlist.
 * CRUD Waitee - lambda function to handle all the operations on the waitee from specific waitlist.
@@ -415,7 +415,7 @@ package:
   artifact: build/libs/WaitlistAppCrudLambdas-dev-all.jar
 ```
 After we execute `sls deploy --verbose` we see next output:
-![](assets/images/serverless-in-action/crud_deploy.png)
+![](assets/images/serverless-in-action/crud_deploy.jpg)
 * Size of the .zip file was 11.06 Mb
 * Eight endpoints were generated for `Waitlist` and `Waitee` lambda functions.
 * Outputs from the stack such as lambda functions arns and s3 bucket name created by serverless framework.
