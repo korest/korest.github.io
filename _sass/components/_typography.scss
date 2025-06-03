@@ -9,9 +9,10 @@
 html {
   line-height: $base-line-height;
   font-family: $font-family-base;
-  font-weight: normal;
+  font-weight: 400;
   color: $text-color;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-size: $font-size-base;
 }
@@ -47,8 +48,9 @@ a {
 //
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 600;
-  line-height: 1.7;
+	font-weight: 500;
+  line-height: 1.4;
+  font-family: $font-family-base;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -83,7 +85,7 @@ hr {
 
 em { font-style: italic; }
 
-strong { font-weight: 600; }
+strong { font-weight: 500; }
 
 small,
 .small {
@@ -93,6 +95,7 @@ small,
 
 p {
   margin: 1.2em 0;
-  word-spacing: 0.05em;
-  line-height: 1.6em;
+  word-spacing: 0.02em;
+  line-height: 1.65em;
+  font-weight: 400;
 }
