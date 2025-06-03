@@ -1,29 +1,47 @@
 {% if page.author %} {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %} {% endif %}
 
-<div class="cover-card table-cell table-middle">
+<div class="cover">
   {% if author.avatar %}
-  <a href="{{ site.url }}/">
-    <img src="{{ site.url }}/img/{{ author.avatar }}" alt="" class="avatar">
-  </a>
+  <div class="avatar">
+    <a href="{{ site.url }}/">
+      <img src="{{ site.url }}/img/{{ author.avatar }}" alt="{{ author.name }}" class="avatar-img">
+    </a>
+  </div>
   {% endif %}
-  <a href="{{ site.url }}/" class="author_name">{{ author.name }}</a>
-  <span class="author_job">{{ author.job }}</span>
-  <span class="author_bio mbm">{{ author.bio }}</span>
-  <nav class="nav">
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="{{ site.url }}/">home</a>
-        <span>/</span>
-      </li>
-      {% for page in site.pages %} {% if page.title %}
-      <li class="nav-item">
-        <a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a>
-        {% unless forloop.last %}
-          <span>/</span>
-        {% endunless %}
-      </li>
-      {% endif %} {% endfor %}
-    </ul>
+  
+  <div class="author-name">
+    <a href="{{ site.url }}/">{{ author.name }}</a>
+  </div>
+  
+  <div class="author-job">{{ author.job }}</div>
+  <div class="author-bio">{{ author.bio }}</div>
+  
+  <nav class="navigation">
+    <a href="{{ site.url }}/" class="nav-link">
+      {% include icon.html name='leaf' %}
+      Home
+    </a>
+    
+    <a href="{{ site.url }}/archive.html" class="nav-link">
+      {% include icon.html name='archive' %}
+      Archive
+    </a>
+    
+    <a href="{{ site.url }}/categories/" class="nav-link">
+      {% include icon.html name='folder' %}
+      Categories
+    </a>
+    
+    <a href="{{ site.url }}/tags.html" class="nav-link">
+      {% include icon.html name='tag' %}
+      Tags
+    </a>
+    
+    <a href="{{ site.url }}/resume.html" class="nav-link">
+      {% include icon.html name='user' %}
+      Resume
+    </a>
   </nav>
+  
   {% include social-links.html %}
 </div>

@@ -31,4 +31,18 @@
     <svg viewBox="0 0 24 24" fill="currentColor" class="icon icon-{{ include.name }}"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.06.82C6.16 17.4 9 14 17 14c8 0 8-4-9-5 20-1 20-7 9-1z"/></svg>
   {% when 'external-link' %}
     <svg viewBox="0 0 24 24" fill="currentColor" class="icon icon-{{ include.name }}"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-8 8"/><path d="m15 3h6v6"/></svg>
+  {% when 'bars' %}
+    <svg viewBox="0 0 24 24" fill="currentColor" class="icon icon-{{ include.name }}"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  {% when 'archive' %}
+    <svg viewBox="0 0 24 24" fill="currentColor" class="icon icon-{{ include.name }}"><polyline points="21,8 21,21 3,21 3,8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+  {% when 'folder' %}
+    <svg viewBox="0 0 24 24" fill="currentColor" class="icon icon-{{ include.name }}"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+  {% when 'tag' %}
+    <svg viewBox="0 0 24 24" fill="currentColor" class="icon icon-{{ include.name }}"><path d="m15 3 6 6-9 9-6-6V3h9z"/><path d="m9 8 1 1"/></svg>
+  {% when 'user' %}
+    <svg viewBox="0 0 24 24" fill="currentColor" class="icon icon-{{ include.name }}"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+  {% when 'chevron-left' %}
+    <svg viewBox="0 0 24 24" fill="currentColor" class="icon icon-{{ include.name }}"><polyline points="15,18 9,12 15,6"/></svg>
+  {% when 'chevron-right' %}
+    <svg viewBox="0 0 24 24" fill="currentColor" class="icon icon-{{ include.name }}"><polyline points="9,18 15,12 9,6"/></svg>
 {% endcase %}

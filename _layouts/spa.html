@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body class="spa-layout">
+  <div class="app-container">
+    <!-- Sidebar - persistent -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-content">
+        {% include sidebar.html %}
+      </div>
+    </aside>
+
+    <!-- Main content area -->
+    <main class="main-content" id="mainContent">
+      <div class="content-wrapper">
+        <div class="loading-indicator" id="loadingIndicator" style="display: none;">
+          <div class="loading-spinner"></div>
+        </div>
+        <div class="content-container" id="contentContainer">
+          {{ content }}
+        </div>
+      </div>
+      {% include footer.html %}
+    </main>
+
+    <!-- Sidebar toggle -->
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar" type="button">
+      <span class="toggle-icon-hide">{% include icon.html name='chevron-left' %}</span>
+      <span class="toggle-icon-show">{% include icon.html name='chevron-right' %}</span>
+    </button>
+  </div>
+
+  {% include js.html %}
+  <script src="{{ site.url }}/js/spa-navigation.js"></script>
+</body>
+</html>
