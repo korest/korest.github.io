@@ -7,12 +7,12 @@
 
             {% if paginator.previous_page %}
                 <a class="newer-posts pagination-nav" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">
-                    <i class="fa fa-angle-double-left"></i>
+                    {% include icon.html name='angle-double-left' %}
                 </a>
             {% endif %}
             <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
             {% if paginator.next_page %}
-                <a class="older-posts pagination-nav" href="{{ paginator.next_page_path | prepend: site.baseurl }}"><i class="fa fa-angle-double-right"></i></a>
+                <a class="older-posts pagination-nav" href="{{ paginator.next_page_path | prepend: site.baseurl }}">{% include icon.html name='angle-double-right' %}</a>
             {% endif %}
         
     </nav>
