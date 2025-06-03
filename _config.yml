@@ -14,7 +14,11 @@ keywords: ["Java", "Kotlin", "AWS"]
 # Jekyll configuration
 ####################################
 #
-plugins: [jekyll-paginate, jekyll-sitemap]
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
 
 timezone:          America/Vancouver
 markdown:          kramdown
@@ -30,6 +34,13 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   enable_coderay: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
 
 #
 ###################################
@@ -50,6 +61,23 @@ owner:
   stackoverflow: 2055854/forest
   linkedin: orest-kyrylchuk-3718983b #username
   instagram: orest.kyrylchuk
+
+# Feed configuration
+feed:
+  path: feed.xml
+
+# SEO configuration
+author:
+  name: Orest Kyrylchuk
+  email: orestkyrylchuk@gmail.com
+
+social:
+  name: Orest Kyrylchuk
+  links:
+    - https://github.com/korest
+    - https://linkedin.com/in/orest-kyrylchuk-3718983b
+    - https://stackoverflow.com/users/2055854/forest
+    - https://instagram.com/orest.kyrylchuk
 
 sass:
   style: compressed
