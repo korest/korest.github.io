@@ -7,7 +7,7 @@ layout: spa
   {% if page.image.feature contains 'https' or page.image.feature contains 'http' %}
   "{{ page.image.feature }}"
   {% else %}
-  "{{ site.url }}/img/{{ page.image.feature }}"
+  "{{ '/img/' | append: page.image.feature | relative_url }}"
   {% endif %}
   alt="{{ page.title }} feature image">
 

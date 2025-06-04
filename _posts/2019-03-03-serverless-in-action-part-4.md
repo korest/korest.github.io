@@ -7,7 +7,7 @@ categories: [Programming]
 comments: true
 ---
 
-> [Part 0: Intro](https://orestkyrylchuk.com/serverless-in-action-part-0), [Part 1: Auth](https://orestkyrylchuk.com/serverless-in-action-part-1) and [Part 2: CRUD](https://orestkyrylchuk.com/serverless-in-action-part-2) and [Part 3: Notification](https://orestkyrylchuk.com/serverless-in-action-part-3)
+> [Part 0: Intro](/serverless-in-action-part-0), [Part 1: Auth](/serverless-in-action-part-1) and [Part 2: CRUD](/serverless-in-action-part-2) and [Part 3: Notification](/serverless-in-action-part-3)
 
 Introduction
 ----
@@ -20,9 +20,9 @@ There are a few AWS services for that:
 <!--more-->
 
 To remind you about `Waitlist` application we have multiple lambda functions:
-* [Auth](https://orestkyrylchuk.com/serverless-in-action-part-1) - Authentication, Authorization and Registration.
-* [CRUD](https://orestkyrylchuk.com/serverless-in-action-part-2) - Waitlist and Waitee.
-* [Notification](https://orestkyrylchuk.com/serverless-in-action-part-3) - Producer and Consumer.
+* [Auth](/serverless-in-action-part-1) - Authentication, Authorization and Registration.
+* [CRUD](/serverless-in-action-part-2) - Waitlist and Waitee.
+* [Notification](/serverless-in-action-part-3) - Producer and Consumer.
 
 In total 7 lambda functions that ideally should be built, deployed and tested together.
 

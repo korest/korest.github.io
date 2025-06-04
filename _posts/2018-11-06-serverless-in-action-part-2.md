@@ -7,7 +7,7 @@ categories: [Programming]
 comments: true
 ---
 
-> [Part 0: Intro](https://orestkyrylchuk.com/serverless-in-action-part-0) and [Part 1: Auth](https://orestkyrylchuk.com/serverless-in-action-part-1)
+> [Part 0: Intro](/serverless-in-action-part-0) and [Part 1: Auth](/serverless-in-action-part-1)
 
 Introduction
 ----

@@ -7,7 +7,7 @@ categories: [Programming]
 comments: true
 ---
 
-> Part 0: Intro could be found [here](https://orestkyrylchuk.com/serverless-in-action-part-0).
+> Part 0: Intro could be found [here](/serverless-in-action-part-0).
 
 Introduction
 ----
@@ -440,5 +440,5 @@ In the beginning, it was a bit hard to get used to syntax after Java world, but 
 All the logic is covered with unit tests. Everything could be found on my [github repository](https://github.com/korest/WaitlistAppAuthLambdas).
 
 What's next?
-* [Part 2: CRUD](https://orestkyrylchuk.com/serverless-in-action-part-2)
+* [Part 2: CRUD](/serverless-in-action-part-2)
 * [Part 3: Notifications]()

@@ -50,7 +50,7 @@ We have 3 parts on the schema above:
 
 All the data would be stored in DynamoDb.
 
-Let's begin with [Part 1: Auth](https://orestkyrylchuk.com/serverless-in-action-part-0).
+Let's begin with [Part 1: Auth](/serverless-in-action-part-1).
 
 Other parts:
 * [Part 2: CRUD]()

@@ -7,7 +7,7 @@
         {% if post.categories.size > 0 %}
         •
         {% for cat in post.categories %}
-          <a class="post-cat" href="{{ site.url }}/categories/#{{ cat }}">{{ cat }}</a>
+          <a class="post-cat" href="{{ '/categories/#' | append: cat | relative_url }}">{{ cat }}</a>
           {% unless forloop.last %}
           <span>/</span>
           {% endunless %}
@@ -15,7 +15,7 @@
         {% endif %}
       </p>
       <h1>
-        <a href="{{ site.url }}{{ post.url }}" class="post-title" title="{{ post.title }}">{{ post.title }}</a>
+        <a href="{{ post.url | relative_url }}" class="post-title" title="{{ post.title }}">{{ post.title }}</a>
         {% if post.link %}
         <a class="post-title-link" href="{{ post.link }}" target="_blank" title="{{ post.title }}">{% include icon.html name='external-link' %}</a>
         {% endif %}
@@ -43,7 +43,7 @@
         {% if post.image.feature contains 'http' %}
         "{{ post.image.feature }}"
         {% else %}
-        "{{ site.url }}/img/{{ post.image.feature }}"
+        "{{ '/img/' | append: post.image.feature | relative_url }}"
         {% endif %}
         alt="{{ post.title }} feature image">
 
