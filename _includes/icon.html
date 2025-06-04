@@ -32,7 +32,9 @@
   {% when 'external-link' %}
     <svg viewBox="0 0 24 24" fill="currentColor" class="icon icon-{{ include.name }}"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-8 8"/><path d="m15 3h6v6"/></svg>
   {% when 'bars' %}
-    <svg viewBox="0 0 24 24" fill="currentColor" class="icon icon-{{ include.name }}"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <svg viewBox="0 0 24 24" fill="currentColor" class="icon icon-{{ include.name }}"><line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2"/><line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2"/><line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2"/></svg>
+  {% when 'bars-vertical' %}
+    <svg viewBox="0 0 24 24" fill="currentColor" class="icon icon-{{ include.name }}"><line x1="6" y1="3" x2="6" y2="21" stroke="currentColor" stroke-width="2"/><line x1="12" y1="3" x2="12" y2="21" stroke="currentColor" stroke-width="2"/><line x1="18" y1="3" x2="18" y2="21" stroke="currentColor" stroke-width="2"/></svg>
   {% when 'archive' %}
     <svg viewBox="0 0 24 24" fill="currentColor" class="icon icon-{{ include.name }}"><polyline points="21,8 21,21 3,21 3,8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
   {% when 'folder' %}

@@ -14,8 +14,8 @@
 
 /* Sidebar */
 .sidebar {
-  width: 280px;
-  min-width: 280px;
+  width: 336px;
+  min-width: 336px;
   background: #f8f9fa;
   border: none;
   position: fixed;
@@ -31,15 +31,18 @@
   }
   
   .sidebar-content {
-    padding: 2rem 1.5rem;
+    padding: 0 1.5rem 0 0;
     background: #f8f9fa;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 }
 
 /* Main content */
 .main-content {
   flex: 1;
-  margin-left: 280px;
+  margin-left: 336px;
   min-height: 100vh;
   background: #f8f9fa;
   transition: margin-left 0.3s ease;
@@ -88,16 +91,24 @@
   top: 1rem;
   left: 1rem;
   z-index: 1001;
-  background: transparent;
-  color: #666;
+  background: lighten($primary, 45%);
+  color: $primary;
   border: none;
-  padding: 0.5rem;
+  padding: 0.75rem;
   cursor: pointer;
   transition: all 0.3s ease;
   display: block;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
   &:hover {
-    color: $text-color;
+    background: $primary;
+    color: white;
+    transform: translateY(-2px);
   }
   
   &.expanded {
@@ -109,8 +120,8 @@
     display: block;
     
     .icon {
-      width: 1.5em;
-      height: 1.5em;
+      width: 1.2em;
+      height: 1.2em;
     }
   }
   
@@ -193,8 +204,8 @@
 
 @media (max-width: $small-screen) {
   .sidebar {
-    width: 280px;
-    min-width: 280px;
+    width: 336px;
+    min-width: 336px;
   }
   
   .main-content .content-wrapper {
