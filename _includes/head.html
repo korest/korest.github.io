@@ -9,6 +9,21 @@
 
   <!-- CSS files -->
   <link rel="stylesheet" href="{{ site.url }}/css/main.css">
+  
+  <!-- Prevent sidebar flash on page load -->
+  <script>
+    (function() {
+      try {
+        if (localStorage.getItem('sidebarHidden') === 'true' && window.innerWidth > 992) {
+          document.documentElement.style.setProperty('--sidebar-display', 'none');
+          document.documentElement.style.setProperty('--main-margin-left', '0');
+          document.documentElement.style.setProperty('--toggle-left', '1rem');
+          document.documentElement.style.setProperty('--toggle-hide-display', 'none');
+          document.documentElement.style.setProperty('--toggle-show-display', 'block');
+        }
+      } catch (e) {}
+    })();
+  </script>
 
   <!-- Icons -->
   <link rel="shortcut icon" href="{{ site.url }}/favicon.ico">

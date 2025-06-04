@@ -16,6 +16,7 @@ class SPANavigation {
         this.setupEventListeners();
         this.updateActiveNavLinks();
         this.setupSidebarToggle();
+        this.restoreSidebarState();
         
         // Handle browser back/forward buttons
         window.addEventListener('popstate', (e) => {
@@ -95,6 +96,9 @@ class SPANavigation {
                 this.mainContent.classList.remove('expanded');
                 this.sidebarToggle.classList.remove('expanded');
             }
+            
+            // Save sidebar state to localStorage
+            this.saveSidebarState();
         }
     }
     
@@ -296,6 +300,53 @@ class SPANavigation {
         
         // Dispatch custom event for other scripts to hook into
         window.dispatchEvent(new CustomEvent('spa:contentLoaded'));
+    }
+    
+    saveSidebarState() {
+        try {
+            localStorage.setItem('sidebarHidden', this.sidebarHidden.toString());
+        } catch (e) {
+            // localStorage might not be available in some contexts
+            console.warn('Could not save sidebar state:', e);
+        }
+    }
+    
+    restoreSidebarState() {
+        try {
+            const savedState = localStorage.getItem('sidebarHidden');
+            if (savedState !== null) {
+                this.sidebarHidden = savedState === 'true';
+                
+                // Apply the restored state only on desktop
+                if (window.innerWidth > 992) {
+                    if (this.sidebarHidden) {
+                        this.sidebar.classList.add('hidden');
+                        this.mainContent.classList.add('expanded');
+                        this.sidebarToggle.classList.add('expanded');
+                    } else {
+                        this.sidebar.classList.remove('hidden');
+                        this.mainContent.classList.remove('expanded');
+                        this.sidebarToggle.classList.remove('expanded');
+                    }
+                }
+            }
+            
+            // Reset CSS variables to default after proper state is applied
+            document.documentElement.style.removeProperty('--sidebar-display');
+            document.documentElement.style.removeProperty('--main-margin-left');
+            document.documentElement.style.removeProperty('--toggle-left');
+            document.documentElement.style.removeProperty('--toggle-hide-display');
+            document.documentElement.style.removeProperty('--toggle-show-display');
+        } catch (e) {
+            // localStorage might not be available in some contexts
+            console.warn('Could not restore sidebar state:', e);
+            // Still reset CSS variables even if there's an error
+            document.documentElement.style.removeProperty('--sidebar-display');
+            document.documentElement.style.removeProperty('--main-margin-left');
+            document.documentElement.style.removeProperty('--toggle-left');
+            document.documentElement.style.removeProperty('--toggle-hide-display');
+            document.documentElement.style.removeProperty('--toggle-show-display');
+        }
     }
 }
 

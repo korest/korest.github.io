@@ -6,6 +6,15 @@
   overflow-x: hidden;
 }
 
+/* CSS variables for preventing sidebar flash */
+:root {
+  --sidebar-display: block;
+  --main-margin-left: 336px;
+  --toggle-left: 1rem;
+  --toggle-hide-display: block;
+  --toggle-show-display: none;
+}
+
 .app-container {
   display: flex;
   min-height: 100vh;
@@ -25,6 +34,7 @@
   overflow-y: auto;
   z-index: 1000;
   transition: transform 0.3s ease;
+  display: var(--sidebar-display);
   
   &.hidden {
     transform: translateX(-100%);
@@ -42,7 +52,7 @@
 /* Main content */
 .main-content {
   flex: 1;
-  margin-left: 336px;
+  margin-left: var(--main-margin-left);
   min-height: 100vh;
   background: #f8f9fa;
   transition: margin-left 0.3s ease;
@@ -117,7 +127,6 @@
   
   .toggle-icon-hide,
   .toggle-icon-show {
-    display: block;
     
     .icon {
       width: 1.2em;
@@ -125,8 +134,12 @@
     }
   }
   
+  .toggle-icon-hide {
+    display: var(--toggle-hide-display);
+  }
+  
   .toggle-icon-show {
-    display: none;
+    display: var(--toggle-show-display);
   }
   
   &.expanded {
