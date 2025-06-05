@@ -202,6 +202,10 @@ class SPANavigation {
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = html;
         
+        // Remove all footer elements from the entire document first
+        const footersToRemove = tempDiv.querySelectorAll('footer');
+        footersToRemove.forEach(el => el.remove());
+        
         // Try to find the main content area
         let content = tempDiv.querySelector('.post-listing, .content-container, main, article');
         
@@ -214,11 +218,17 @@ class SPANavigation {
             // Last resort: get body content but exclude sidebar
             const body = tempDiv.querySelector('body');
             if (body) {
-                // Remove sidebar and navigation elements
-                const elementsToRemove = body.querySelectorAll('.sidebar, nav, .col.s12.m3');
+                // Remove sidebar, navigation, and footer elements
+                const elementsToRemove = body.querySelectorAll('.sidebar, nav, .col.s12.m3, footer');
                 elementsToRemove.forEach(el => el.remove());
                 content = body;
             }
+        }
+        
+        // Final cleanup: remove any remaining footer elements from the extracted content
+        if (content) {
+            const remainingFooters = content.querySelectorAll('footer');
+            remainingFooters.forEach(el => el.remove());
         }
         
         return content ? content.innerHTML : html;
