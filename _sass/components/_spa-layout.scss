@@ -349,9 +349,8 @@
       }
       
       &.active {
-        background: $primary;
-        color: white;
-        font-weight: 500;
+        color: darken($primary, 10%);
+        font-weight: 600;
       }
       
       .icon {
