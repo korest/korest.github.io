@@ -9,19 +9,19 @@ comments: true
 
 Introduction
 ----
-Nowadays serverless architecture became a thing in application design.
-The main advantage it gives to us is that we don't need to manage servers anymore, however, technically it still runs on the servers.
-Serverless architecture became popular after release of [AWS Lambda](https://aws.amazon.com/lambda/) which gave us the possibility to deploy a single function(peace of code) to AWS environment and then execute it.
+Nowadays serverless architecture has become a thing in application design.
+The main advantage it gives us is that we don't need to manage servers anymore, however, technically it still runs on servers.
+Serverless architecture became popular after the release of [AWS Lambda](https://aws.amazon.com/lambda/) which gave us the possibility to deploy a single function (piece of code) to the AWS environment and then execute it.
 This article consists of 3 parts which describe how to build a serverless application step by step.
 <!--more-->
 
 Architecture
 ----
-To build an architecture first let's define the idea.
-Probably most of us had the situation in our lives when we wanted to visit some famous restaurant, but unfortunately, it was full at that moment of time.
-Sometimes the staff offered to sign up in the waiting list with name/contact information and come back in N hours.
-However, in some cases, it didn't work for example when we came back the restaurant was still full or it was already too late.
-Our idea is to automate this process and build the waitlist application which would help customers to get into the restaurant during the busy days:
+To build an architecture, first let's define the idea.
+Probably most of us have had the situation in our lives when we wanted to visit some famous restaurant, but unfortunately, it was full at that moment.
+Sometimes the staff offered to sign up on the waiting list with name/contact information and come back in N hours.
+However, in some cases, it didn't work - for example when we came back the restaurant was still full or it was already too late.
+Our idea is to automate this process and build a waitlist application which would help customers get into restaurants during busy days:
 * Sign up/Sign in
 * Create/Update/Delete waitlist
 * Add/Remove waitee(customer) to/from the waitlist

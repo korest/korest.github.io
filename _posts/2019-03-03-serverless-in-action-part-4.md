@@ -11,7 +11,7 @@ comments: true
 
 Introduction
 ----
-In this part, we would create a CI/CD process using AWS tools.
+In this part, we will create a CI/CD process using AWS tools.
 There are a few AWS services for that:
 * [CodeBuild](https://aws.amazon.com/codebuild) - continuous integration service.
 * [CodeDeploy](https://aws.amazon.com/codedeploy) - deployment service.
@@ -19,12 +19,12 @@ There are a few AWS services for that:
 
 <!--more-->
 
-To remind you about `Waitlist` application we have multiple lambda functions:
+To remind you about the `Waitlist` application, we have multiple lambda functions:
 * [Auth](/serverless-in-action-part-1) - Authentication, Authorization and Registration.
 * [CRUD](/serverless-in-action-part-2) - Waitlist and Waitee.
 * [Notification](/serverless-in-action-part-3) - Producer and Consumer.
 
-In total 7 lambda functions that ideally should be built, deployed and tested together.
+In total, 7 lambda functions that ideally should be built, deployed and tested together.
 
 Pipeline[0]
 ----
@@ -141,9 +141,9 @@ I'm not going to provide configuration details for `CRUD` and `Notification` lam
 
 Conclusion
 ----
-We created a simple pipeline for our `WatilistApp` which deploys everything in a single account.
+We created a simple pipeline for our `WaitlistApp` which deploys everything to a single account.
 In a real use-case scenario, we would probably want to deploy to multiple stages/accounts.
-There a few blog posts and documentation articles that could help us with this:
+There are a few blog posts and documentation articles that could help us with this:
 * [Building a Secure Cross-Account Continuous Delivery Pipeline](https://aws.amazon.com/blogs/devops/aws-building-a-secure-cross-account-continuous-delivery-pipeline).
 * [Using AWS CodePipeline to Perform Multi-Region Deployments](https://aws.amazon.com/blogs/devops/using-aws-codepipeline-to-perform-multi-region-deployments).
 * [Four stage pipeline](https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-four-stage-pipeline.html).

@@ -11,16 +11,16 @@ comments: true
 
 Introduction
 ----
-This section is about the core of our application - CRUD lambda functions. Remind you the architecture:
+This section is about the core of our application - CRUD lambda functions. To remind you of the architecture:
 ![](assets/images/serverless-in-action/crud.jpg)
 On the design above we have:
 * CRUD Waitlist - lambda function to handle all the operations on the waitlist.
-* CRUD Waitee - lambda function to handle all the operations on the waitee from specific waitlist.
+* CRUD Waitee - lambda function to handle all the operations on waitees from a specific waitlist.
 <!--more-->
 
-For these two lambda functions, I have chosen a relatively new language from Java world which becomes more popular from day to day.
-Greetings to [Kotlin](https://kotlinlang.org/). I'm not experienced in it, so it's a good chance to improve my knowledge.
-Comparing to Go, Kotlin has bigger binary file and slower cold start. There are solutions for each of these problems, but I won't talk about them.
+For these two lambda functions, I have chosen a relatively new language from the Java world which becomes more popular day by day.
+Greetings to [Kotlin](https://kotlinlang.org/). I'm not experienced with it, so it's a good chance to improve my knowledge.
+Compared to Go, Kotlin has a bigger binary file and slower cold start. There are solutions for each of these problems, but I won't discuss them here.
 
 We have the same `serverless.yaml` file for both lambda functions.
 ```yaml

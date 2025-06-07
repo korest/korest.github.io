@@ -11,21 +11,21 @@ comments: true
 
 Introduction
 ----
-Here we would implement the last, but not the least part of our application - notifying customers that they should come to the place that they waited for:
+Here we will implement the last, but not least part of our application - notifying customers that they should come to the place they are waiting for:
 ![](assets/images/serverless-in-action/notification.jpg)
 It has two lambda functions:
-* Product - sends waitees that should be notified into the SQS. 
+* Producer - sends waitees that should be notified into SQS. 
 * Consumer - processes SQS and sends notifications to the waitees.
 <!--more-->
 
-Probably your first thoughts are that we could send notifications directly from the producer function itself.
-The problem here is that `notify` operation is heavy and it could take too much time to send the notification to all waitees (maximum lambda execution time per request is [15 minutes](https://docs.aws.amazon.com/lambda/latest/dg/limits.html)).
-This approach is not scalable and it would be a bottleneck. 
-Moving process notification functionality to separate function would be much more [scalable](https://docs.aws.amazon.com/lambda/latest/dg/scaling.html). 
+Probably your first thought is that we could send notifications directly from the producer function itself.
+The problem here is that the `notify` operation is heavy and it could take too much time to send notifications to all waitees (maximum lambda execution time per request is [15 minutes](https://docs.aws.amazon.com/lambda/latest/dg/limits.html)).
+This approach is not scalable and would be a bottleneck. 
+Moving the notification processing functionality to a separate function would be much more [scalable](https://docs.aws.amazon.com/lambda/latest/dg/scaling.html). 
 
-For these two lambda functions, I have chosen [NodeJs](https://nodejs.org/en/blog/release/v8.11.3/) runtime with [typescript](https://www.typescriptlang.org/) which is more comfortable for engineers who got used to static typed languages.
-NodeJs runtime gives us better cold start comparing to `java` and much smaller package to deploy.
-Initial project was generated using serverless framework: `serverless create --template aws-nodejs-typescript`.
+For these two lambda functions, I have chosen [NodeJs](https://nodejs.org/en/blog/release/v8.11.3/) runtime with [typescript](https://www.typescriptlang.org/) which is more comfortable for engineers who are used to statically typed languages.
+NodeJs runtime gives us better cold start compared to `java` and a much smaller package to deploy.
+The initial project was generated using the serverless framework: `serverless create --template aws-nodejs-typescript`.
 The same as before we have common `serverless.yaml` for both lambda functions:
 ```yaml
 service: WaitlistAppNotificationLambdas

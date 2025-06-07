@@ -7,7 +7,7 @@ categories: [Programming]
 comments: true
 ---
 
-<br>For the last few years [Lombok](https://projectlombok.org/) became one of the most used java libraries.
+<br>Over the last few years [Lombok](https://projectlombok.org/) has become one of the most used Java libraries.
 <br>Unfortunately with the latest releases of Java it has some problems [Java 9](https://github.com/rzwitserloot/lombok/issues/985), [Java 10](https://github.com/rzwitserloot/lombok/issues/1572).
 <br>I won't list all the advantages and disadvantages of it, but rather show some alternative libraries:
 * [Immutables](https://immutables.github.io/)
@@ -16,8 +16,8 @@ comments: true
 
 I. Lombok
 ----
-Let's start with already known `Lombok` and create some basic classes with simple functionality.
-Then we will try to do the same using other two libraries.
+Let's start with the already known `Lombok` and create some basic classes with simple functionality.
+Then we will try to do the same using the other two libraries.
 
 For example, we have our first class `User`.
 ~~~ java
@@ -390,8 +390,8 @@ public void whenWorkBuilderSerializeDeserializeThenWork() throws IOException {
 
 Conclusion
 ----
-As we can all the examples that we implemented using `Lombok` could be done using two other libraries.
-I don't say that we could cover all `Lombok`'s functionality and for sure there are some features that wouldn't work.
-Anyway, I would definitely recommend to try these libraries.
+As we can see, all the examples that we implemented using `Lombok` could be done using the two other libraries.
+I don't claim that we could cover all `Lombok`'s functionality and there are certainly some features that wouldn't work.
+Anyway, I would definitely recommend trying these libraries.
 
 Sources on my github: [LombokAlternatives](https://github.com/korest/LombokAlternatives)

@@ -9,10 +9,10 @@ comments: true
 
 Introduction
 ----
-An enum type is a special data type which holds a list of constants. 
-Enum type variable must be equal to one of those constants.
-Java Enum is a type of class which is defined with `enum` keyword and was introduced in Java 5. 
-As it mentioned it's used to define a list of constants, but not limited to it and can also contain methods and fields.
+An enum type is a special data type that holds a list of constants. 
+An enum type variable must be equal to one of those constants.
+Java Enum is a type of class that is defined with the `enum` keyword and was introduced in Java 5. 
+As mentioned, it's used to define a list of constants, but is not limited to that and can also contain methods and fields.
 
 More specific information could be found in [Java enum's documentation](https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html).
 
@@ -20,7 +20,7 @@ More specific information could be found in [Java enum's documentation](https://
 
 Example[0]
 ----
-From the definition enum sounds like a very powerful type, but how often have you seen code like:
+From the definition, enum sounds like a very powerful type, but how often have you seen code like:
 ```java
 public enum Operation {
     ADD,
@@ -29,7 +29,7 @@ public enum Operation {
     DIVIDE
 }
 ```
-and then `Operation`s are used as a poor constants:
+and then `Operation`s are used as poor constants:
 ```java
 public class OperationProcessor implements Processor {
     @Override
@@ -71,9 +71,9 @@ public enum Operation {
 }
 ```
 `BiFunction` is representing an operation on two numbers.
-From object-oriented view it looks pretty natural to have this logic inside. 
+From an object-oriented perspective, it looks pretty natural to have this logic inside. 
 
-Now to execute the operation on two numbers `apply` method is called:
+Now to execute the operation on two numbers, the `apply` method is called:
 ```java
 public class OperationProcessor {
     @Override

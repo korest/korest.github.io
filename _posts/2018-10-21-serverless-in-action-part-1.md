@@ -11,18 +11,18 @@ comments: true
 
 Introduction
 ----
-We start our `dive deep` into the architecture from `Auth` section.
-To remind you from the previous part it has the next design:
+We start our deep dive into the architecture from the `Auth` section.
+To remind you from the previous part, it has the following design:
 ![](assets/images/serverless-in-action/auth.jpg)
 <!--more-->
 It has 3 separate lambda functions:
-* Registration - which has the functionality to register new account.
-* Authentication - which generates JWT token for the valid credentials.
-* Authorization - which validates JWT token and returns policy. 
+* Registration - which has the functionality to register a new account.
+* Authentication - which generates a JWT token for valid credentials.
+* Authorization - which validates a JWT token and returns a policy. 
 
-For me it doesn't matter what language to use to implement those functions,  but to get some experience I selected Golang.
-It works great for lambda functions as binary file is pretty small and the cold start problem is very minor.
-For deploying to AWS we will use [CloudFormation](https://aws.amazon.com/cloudformation/) and [serverless](https://serverless.com/) framework which is really awesome. 
+For me it doesn't matter what language to use to implement those functions, but to get some experience I selected Golang.
+It works great for lambda functions as the binary file is pretty small and the cold start problem is very minor.
+For deploying to AWS we will use [CloudFormation](https://aws.amazon.com/cloudformation/) and the [serverless](https://serverless.com/) framework which is really awesome. 
 
 We have the same `serverless.yaml` file for all 3 lambda functions which starts with:
 ~~~ yaml
@@ -278,8 +278,8 @@ Authentication
 2. Decrypt and check if password is correct.
 3. Generate JWT token.
 
-To get account from DynamoDb the same quest is used as in `registration` lambda function to check if account exists.
-We might think that it could be done vice-versa first encrypt the provided password and then check if it's the same as in DynamoDb, but KMS uses envelope encryption and the encryption key changes each time request is made for a key, so it wouldn't work.
+To get the account from DynamoDb, the same query is used as in the `registration` lambda function to check if the account exists.
+We might think that it could be done vice-versa - first encrypt the provided password and then check if it's the same as in DynamoDb, but KMS uses envelope encryption and the encryption key changes each time a request is made for a key, so it wouldn't work.
 The code is pretty straightforward and looks the same as encryption:
 ~~~ go
 passwordInput := &kms.DecryptInput{
