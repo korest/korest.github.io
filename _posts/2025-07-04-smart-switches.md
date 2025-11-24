@@ -9,6 +9,8 @@ comments: true
 
 I recently had problems with smart dimmer switches that led me down a path to Home Assistant. What started as a simple switch replacement ended up being a full automation setup.
 
+<!--more-->
+
 ## Problems with Kasa Smart Switches
 
 I started with TP-Link Kasa smart dimmer switches. They seemed like a good choice - popular and reasonably priced. But I hit two problems.

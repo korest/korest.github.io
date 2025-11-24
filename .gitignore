@@ -4,3 +4,5 @@ _drafts
 .ruby-version
 .DS_Store
 .idea/
+vendor/
+.bundle/
