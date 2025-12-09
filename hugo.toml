@@ -35,20 +35,19 @@ theme = 'theminal'
   defaultTheme = "dark"
 
   # Site description (used in meta tags)
-  description = "A blog about software engineering, Java, Kotlin, Rust, and AWS"
+  description = "A blog about software engineering"
 
   # Author information
   author = "Orest Kyrylchuk"
   role = "Software Engineer"
   location = "Seattle, WA"
-  email = "orestkyrylchuk@gmail.com"
 
   # Terminal prompt customization
   promptUser = "orest"
   promptHost = "blog"
 
   # Welcome message on homepage
-  welcome = "Hello! I'm Orest, a Software Engineer based in Seattle. I write about software engineering, Java, Kotlin, Rust, AWS, and serverless architecture."
+  welcome = "Hello! I'm Orest, a Software Engineer originally from Lviv 🇺🇦, based in Seattle, WA 🇺🇸. I write about software, tech, and things I find interesting. Blog posts are my own."
 
   # ASCII art (optional - displayed on homepage)
   asciiArt = '''

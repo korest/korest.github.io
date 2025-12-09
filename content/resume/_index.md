@@ -1,6 +1,6 @@
 +++
 title = 'Resume'
-date = 2024-01-01
+date = 2025-12-08
 draft = false
 
 [params]
@@ -8,37 +8,49 @@ draft = false
   tagline = "Software Engineer"
 
 [[params.experience]]
-  title = "Software Development Engineer"
-  company = "Amazon"
-  url = "http://www.amazon.com/"
-  date = "January 2018 - Present"
+  position = "Software Engineer"
+  company = "Facebook/Meta"
+  url = "https://www.meta.com/"
+  startDate = "September 2021"
   description = "Building scalable distributed systems and services."
 
 [[params.experience]]
-  title = "Software Engineer"
+  position = "Software Development Engineer"
+  company = "Amazon/AWS"
+  url = "https://aws.amazon.com/"
+  startDate = "January 2018"
+  endDate = "September 2021"
+  description = "AWS CodePipeline"
+
+[[params.experience]]
+  position = "Software Engineer"
   company = "N-iX"
   url = "http://www.n-ix.com/"
-  date = "October 2016 - December 2017"
+  startDate = "October 2016"
+  endDate = "December 2017"
   description = "Full-stack development and software engineering."
 
 [[params.experience]]
-  title = "Software Engineer"
+  position = "Software Engineer"
   company = "Remit"
   url = "https://www.remit.com/"
-  date = "October 2015 - October 2016"
+  startDate = "October 2015"
+  endDate = "October 2016"
   description = "Software development and engineering."
 
 [[params.education]]
   degree = "Applied Mathematics and Informatics"
-  school = "Lviv Ivan Franko National University"
+  institution = "Lviv Ivan Franko National University"
   url = "http://www.lnu.edu.ua/"
-  date = "2009 - 2014"
+  startDate = "2009"
+  endDate = "2014"
 
 [[params.education]]
   degree = "Physics and Mathematics"
-  school = "Lviv Physics and Mathematics Lyceum"
+  institution = "Lviv Physics and Mathematics Lyceum"
   url = "http://www.lpml.com.ua/"
-  date = "2005 - 2009"
+  startDate = "2005"
+  endDate = "2009"
 
 [[params.skills]]
   category = "Languages"
@@ -46,7 +58,7 @@ draft = false
 
 [[params.skills]]
   category = "Frameworks"
-  items = ["Spring Framework (Boot, MVC, Data, AOP)", "AWS (DynamoDB, SQS, SNS, Lambda, S3, CloudWatch)", "NodeJS"]
+  items = ["Spring Framework (Boot, MVC, Data, AOP)", "AWS (DynamoDB, SQS, SNS, Lambda, S3, CloudWatch)"]
 
 [[params.skills]]
   category = "Databases"
@@ -54,7 +66,5 @@ draft = false
 
 [[params.skills]]
   category = "Tools"
-  items = ["Maven", "Gradle", "Git", "Jira", "Jenkins"]
+  items = ["Maven", "Gradle", "Git", "Jenkins"]
 +++
-
-Software Engineer based in Seattle, WA. Passionate about building scalable systems, serverless architecture, and exploring new programming languages.
