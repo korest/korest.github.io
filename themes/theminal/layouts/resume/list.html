@@ -1,0 +1,185 @@
+{{ define "main" }}
+{{/* Command prompt */}}
+<div class="prompt">
+  <span class="prompt-user">{{ site.Params.promptUser | default "visitor" }}</span>
+  <span class="prompt-separator">@</span>
+  <span class="prompt-path">{{ site.Params.promptHost | default "blog" }}</span>
+  <span class="prompt-symbol">$</span>
+  <span>cat ./resume.json | jq</span>
+</div>
+
+{{/* Resume Header */}}
+<div class="output" style="margin-top: 16px;">
+  <h1 style="color: var(--terminal-cyan); margin-bottom: 8px;">{{ .Params.name | default site.Params.author }}</h1>
+  <p style="color: var(--terminal-yellow);">{{ .Params.title | default site.Params.role }}</p>
+  {{ with .Params.summary }}
+  <p style="margin-top: 12px; color: #aaa;">{{ . }}</p>
+  {{ end }}
+</div>
+
+{{/* Contact Info */}}
+{{ with .Params.contact }}
+<div class="resume-section">
+  <h2>Contact</h2>
+  <div class="info-block">
+    {{ with .email }}
+    <div class="info-line">
+      <span class="info-label">Email:</span>
+      <span class="info-value"><a href="mailto:{{ . }}">{{ . }}</a></span>
+    </div>
+    {{ end }}
+    {{ with .location }}
+    <div class="info-line">
+      <span class="info-label">Location:</span>
+      <span class="info-value">{{ . }}</span>
+    </div>
+    {{ end }}
+    {{ with .website }}
+    <div class="info-line">
+      <span class="info-label">Website:</span>
+      <span class="info-value"><a href="{{ . }}" target="_blank" rel="noopener">{{ . }}</a></span>
+    </div>
+    {{ end }}
+    {{ with .github }}
+    <div class="info-line">
+      <span class="info-label">GitHub:</span>
+      <span class="info-value"><a href="https://github.com/{{ . }}" target="_blank" rel="noopener">github.com/{{ . }}</a></span>
+    </div>
+    {{ end }}
+    {{ with .linkedin }}
+    <div class="info-line">
+      <span class="info-label">LinkedIn:</span>
+      <span class="info-value"><a href="https://linkedin.com/in/{{ . }}" target="_blank" rel="noopener">linkedin.com/in/{{ . }}</a></span>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
+{{/* Experience */}}
+{{ with .Params.experience }}
+<div class="resume-section">
+  <h2>Experience</h2>
+  {{ range . }}
+  <div class="resume-item">
+    <div class="resume-item-header">
+      <span class="resume-item-title">{{ .position }}</span>
+      <span class="resume-item-date">{{ .startDate }} - {{ .endDate | default "Present" }}</span>
+    </div>
+    <div class="resume-item-subtitle">{{ .company }}{{ with .location }} - {{ . }}{{ end }}</div>
+    {{ with .description }}
+    <div class="resume-item-description">{{ . | markdownify }}</div>
+    {{ end }}
+    {{ with .highlights }}
+    <ul class="resume-item-description">
+      {{ range . }}
+      <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* Education */}}
+{{ with .Params.education }}
+<div class="resume-section">
+  <h2>Education</h2>
+  {{ range . }}
+  <div class="resume-item">
+    <div class="resume-item-header">
+      <span class="resume-item-title">{{ .degree }}</span>
+      <span class="resume-item-date">{{ .startDate }} - {{ .endDate | default "Present" }}</span>
+    </div>
+    <div class="resume-item-subtitle">{{ .institution }}{{ with .location }} - {{ . }}{{ end }}</div>
+    {{ with .description }}
+    <div class="resume-item-description">{{ . | markdownify }}</div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* Skills */}}
+{{ with .Params.skills }}
+<div class="resume-section">
+  <h2>Skills</h2>
+  {{ range . }}
+  <div style="margin: 12px 0;">
+    <div style="color: var(--terminal-yellow); margin-bottom: 8px;">{{ .category }}</div>
+    <div class="skills-list">
+      {{ range .items }}
+      <span class="skill-tag">{{ . }}</span>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* Projects */}}
+{{ with .Params.projects }}
+<div class="resume-section">
+  <h2>Projects</h2>
+  {{ range . }}
+  <div class="resume-item">
+    <div class="resume-item-header">
+      <span class="resume-item-title">
+        {{ if .url }}
+        <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
+        {{ else }}
+        {{ .name }}
+        {{ end }}
+      </span>
+      {{ with .date }}
+      <span class="resume-item-date">{{ . }}</span>
+      {{ end }}
+    </div>
+    {{ with .description }}
+    <div class="resume-item-description">{{ . | markdownify }}</div>
+    {{ end }}
+    {{ with .technologies }}
+    <div class="skills-list" style="margin-top: 8px;">
+      {{ range . }}
+      <span class="skill-tag">{{ . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* Certifications */}}
+{{ with .Params.certifications }}
+<div class="resume-section">
+  <h2>Certifications</h2>
+  {{ range . }}
+  <div class="resume-item">
+    <div class="resume-item-header">
+      <span class="resume-item-title">{{ .name }}</span>
+      <span class="resume-item-date">{{ .date }}</span>
+    </div>
+    <div class="resume-item-subtitle">{{ .issuer }}</div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+
+{{/* Custom content from markdown */}}
+{{ with .Content }}
+<div class="resume-section">
+  {{ . }}
+</div>
+{{ end }}
+
+{{/* Download link */}}
+{{ with .Params.downloadUrl }}
+<div style="margin-top: 32px; text-align: center;">
+  <a href="{{ . }}" class="skill-tag" style="display: inline-block; padding: 8px 24px;" download>
+    Download PDF
+  </a>
+</div>
+{{ end }}
+{{ end }}

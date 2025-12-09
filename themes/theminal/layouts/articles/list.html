@@ -1,0 +1,60 @@
+{{ define "main" }}
+{{/* Command prompt */}}
+<div class="prompt">
+  <span class="prompt-user">{{ site.Params.promptUser | default "visitor" }}</span>
+  <span class="prompt-separator">@</span>
+  <span class="prompt-path">{{ site.Params.promptHost | default "blog" }}</span>
+  <span class="prompt-symbol">$</span>
+  <span>ls -la ./articles</span>
+</div>
+
+<div class="output">
+  <div class="output-line">total {{ len .Pages }} articles</div>
+</div>
+
+{{/* Articles grouped by year */}}
+{{ $pages := .Pages.ByDate.Reverse }}
+{{ range $pages.GroupByDate "2006" }}
+<div class="articles-year">
+  <div class="prompt" style="margin-top: 24px;">
+    <span class="prompt-path">{{ .Key }}/</span>
+  </div>
+
+  <div class="articles-list">
+    {{ range .Pages }}
+    <div class="article-item">
+      <span class="article-date">{{ .Date.Format "Jan 02" }}</span>
+      <span class="article-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
+      {{ with .Params.tags }}
+      <div class="article-tags">
+        {{ range first 3 . }}
+        <span class="tag">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
+{{/* Tags summary */}}
+{{ $tags := site.Taxonomies.tags }}
+{{ if $tags }}
+<div class="prompt" style="margin-top: 32px;">
+  <span class="prompt-user">{{ site.Params.promptUser | default "visitor" }}</span>
+  <span class="prompt-separator">@</span>
+  <span class="prompt-path">{{ site.Params.promptHost | default "blog" }}</span>
+  <span class="prompt-symbol">$</span>
+  <span>ls ./tags</span>
+</div>
+
+<div class="output" style="margin-top: 12px;">
+  <div class="skills-list">
+    {{ range $name, $taxonomy := $tags }}
+    <a href="{{ "articles/tags/" | absURL }}{{ $name | urlize }}/" class="skill-tag">{{ $name }} ({{ len $taxonomy }})</a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+{{ end }}

@@ -1,0 +1,16 @@
+<footer class="terminal-footer">
+  <p>
+    {{ with site.Params.footerText }}
+      {{ . | safeHTML }}
+    {{ else }}
+      {{ site.Title }} &copy; {{ now.Year }}
+      {{ with site.Params.author }} - {{ . }}{{ end }}
+    {{ end }}
+  </p>
+  {{ if site.Params.showPoweredBy }}
+  <p>
+    Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>,
+    theme made by <a href="https://github.com/korest" target="_blank" rel="noopener">korest</a>
+  </p>
+  {{ end }}
+</footer>

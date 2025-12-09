@@ -1,0 +1,14 @@
+{{- $articles := where site.RegularPages "Section" "articles" -}}
+{{- $index := slice -}}
+{{- range $articles -}}
+  {{- $entry := dict
+    "title" .Title
+    "url" .RelPermalink
+    "date" (.Date.Format "2006-01-02")
+    "content" (.Plain | truncate 500)
+    "tags" .Params.tags
+    "description" .Description
+  -}}
+  {{- $index = $index | append $entry -}}
+{{- end -}}
+{{- $index | jsonify -}}

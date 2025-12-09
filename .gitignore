@@ -1,8 +1,19 @@
-_site
-.sass-cache
-_drafts
-.ruby-version
+# Hugo build output
+public/
+resources/_gen/
+
+# OS generated files
 .DS_Store
+Thumbs.db
+
+# IDE
 .idea/
-vendor/
-.bundle/
+.vscode/
+*.swp
+*.swo
+
+# Hugo
+.hugo_build.lock
+
+# Node (if using npm for theme development)
+node_modules/

@@ -1,0 +1,67 @@
+<div class="mini-terminal" id="mini-terminal">
+  <div class="mini-terminal-input">
+    <span class="mini-terminal-prompt">$</span>
+    <input
+      type="text"
+      id="terminal-input"
+      placeholder="Type / for commands..."
+      autocomplete="off"
+      aria-label="Terminal command input"
+    >
+  </div>
+  <div class="mini-terminal-suggestions" id="terminal-suggestions">
+    <div class="suggestion-item" data-cmd="/articles" data-url="{{ "articles/" | absURL }}">
+      <span class="suggestion-cmd">/articles</span>
+      <span class="suggestion-desc">Browse all articles</span>
+    </div>
+    {{ with site.Params.email }}
+    <div class="suggestion-item" data-cmd="/email" data-url="mailto:{{ . }}">
+      <span class="suggestion-cmd">/email</span>
+      <span class="suggestion-desc">Send an email</span>
+    </div>
+    {{ end }}
+    {{ with site.Params.social.github }}
+    <div class="suggestion-item" data-cmd="/github" data-url="https://github.com/{{ . }}" data-external="true">
+      <span class="suggestion-cmd">/github</span>
+      <span class="suggestion-desc">GitHub profile</span>
+    </div>
+    {{ end }}
+    <div class="suggestion-item" data-cmd="/home" data-url="{{ site.Home.RelPermalink }}">
+      <span class="suggestion-cmd">/home</span>
+      <span class="suggestion-desc">Go to homepage</span>
+    </div>
+    {{ with site.Params.social.linkedin }}
+    <div class="suggestion-item" data-cmd="/linkedin" data-url="https://linkedin.com/in/{{ . }}" data-external="true">
+      <span class="suggestion-cmd">/linkedin</span>
+      <span class="suggestion-desc">LinkedIn profile</span>
+    </div>
+    {{ end }}
+    <div class="suggestion-item" data-cmd="/resume" data-url="{{ "resume/" | absURL }}">
+      <span class="suggestion-cmd">/resume</span>
+      <span class="suggestion-desc">View resume</span>
+    </div>
+    <div class="suggestion-item" data-cmd="/search" data-url="#" data-search="true">
+      <span class="suggestion-cmd">/search</span>
+      <span class="suggestion-desc">Search articles (e.g. /search java)</span>
+    </div>
+    <div class="suggestion-item" data-cmd="/theme" data-url="#">
+      <span class="suggestion-cmd">/theme</span>
+      <span class="suggestion-desc">Toggle dark/light theme</span>
+    </div>
+    {{ with site.Params.social.x }}
+    <div class="suggestion-item" data-cmd="/x" data-url="https://x.com/{{ . }}" data-external="true">
+      <span class="suggestion-cmd">/x</span>
+      <span class="suggestion-desc">X profile</span>
+    </div>
+    {{ end }}
+    {{/* Custom commands from config */}}
+    {{ range site.Params.commands }}
+    <div class="suggestion-item" data-cmd="/{{ .name }}" data-url="{{ .url }}"{{ if .external }} data-external="true"{{ end }}>
+      <span class="suggestion-cmd">/{{ .name }}</span>
+      <span class="suggestion-desc">{{ .description }}</span>
+    </div>
+    {{ end }}
+  </div>
+  {{/* Search results container */}}
+  <div class="search-results" id="search-results"></div>
+</div>

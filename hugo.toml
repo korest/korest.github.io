@@ -1,0 +1,101 @@
+# Theminal - Hugo Configuration
+# ================================
+
+baseURL = 'https://orestkyrylchuk.com/'
+languageCode = 'en-us'
+title = 'orestkyrylchuk'
+theme = 'theminal'
+
+# Enable taxonomies
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
+
+# Permalinks
+[permalinks]
+  articles = '/:slug/'
+  tags = '/tags/:slug/'
+
+# Output formats (RSS + JSON for search)
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+  section = ['HTML', 'RSS']
+
+# JSON output format for search index
+[outputFormats.JSON]
+  mediaType = "application/json"
+  baseName = "index"
+  isPlainText = true
+
+# ===========================================
+# THEME PARAMETERS
+# ===========================================
+[params]
+  # Theme appearance
+  defaultTheme = "dark"
+
+  # Site description (used in meta tags)
+  description = "A blog about software engineering, Java, Kotlin, Rust, and AWS"
+
+  # Author information
+  author = "Orest Kyrylchuk"
+  role = "Software Engineer"
+  location = "Seattle, WA"
+  email = "orestkyrylchuk@gmail.com"
+
+  # Terminal prompt customization
+  promptUser = "orest"
+  promptHost = "blog"
+
+  # Welcome message on homepage
+  welcome = "Hello! I'm Orest, a Software Engineer based in Seattle. I write about software engineering, Java, Kotlin, Rust, AWS, and serverless architecture."
+
+  # ASCII art (optional - displayed on homepage)
+  asciiArt = '''
+   ___               _
+  / _ \ _ __ ___ ___| |_
+ | | | | '__/ _ / __| __|
+ | |_| | | |  __\__ | |_
+  \___/|_|  \___|___/\__|
+'''
+
+  # Number of recent articles to show on homepage
+  recentArticlesCount = 5
+
+  # Enable syntax highlighting for code blocks
+  syntaxHighlighting = true
+
+  # Show "Powered by Hugo & Theminal" in footer
+  showPoweredBy = true
+
+  # Social links
+  [params.social]
+    github = "korest"
+    linkedin = "orest-kyrylchuk-3718983b"
+
+  # Google Analytics
+  googleAnalytics = "UA-124218867-1"
+
+  # Comments - Disqus
+  disqusShortname = "orestkyrylchuk"
+
+# ===========================================
+# MARKUP CONFIGURATION
+# ===========================================
+[markup]
+  [markup.highlight]
+    style = 'monokai'
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = false
+
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# ===========================================
+# SECURITY (for GitHub Actions deployment)
+# ===========================================
+[security]
+  [security.funcs]
+    getenv = ['^HUGO_', '^CI$']

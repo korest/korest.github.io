@@ -1,0 +1,28 @@
+<nav class="terminal-tabs" role="navigation" aria-label="Main navigation">
+  {{/* Home Tab */}}
+  <a href="{{ site.Home.RelPermalink }}" class="terminal-tab{{ if .IsHome }} active{{ end }}" aria-current="{{ if .IsHome }}page{{ end }}">
+    <span class="terminal-tab-icon">~</span>
+    <span>home</span>
+  </a>
+
+  {{/* Articles Tab - also active for tags */}}
+  {{ $isArticlesActive := or (eq .Section "articles") (eq .Section "tags") }}
+  <a href="{{ "articles/" | absURL }}" class="terminal-tab{{ if $isArticlesActive }} active{{ end }}" aria-current="{{ if $isArticlesActive }}page{{ end }}">
+    <span class="terminal-tab-icon">></span>
+    <span>articles</span>
+  </a>
+
+  {{/* Resume Tab */}}
+  <a href="{{ "resume/" | absURL }}" class="terminal-tab{{ if eq .Title "Resume" }} active{{ end }}" aria-current="{{ if eq .Title "Resume" }}page{{ end }}">
+    <span class="terminal-tab-icon">#</span>
+    <span>resume</span>
+  </a>
+
+  {{/* Custom tabs from config */}}
+  {{ range site.Params.tabs }}
+  <a href="{{ .url | absURL }}" class="terminal-tab{{ if eq $.Title .name }} active{{ end }}">
+    <span class="terminal-tab-icon">{{ .icon | default ">" }}</span>
+    <span>{{ .name }}</span>
+  </a>
+  {{ end }}
+</nav>

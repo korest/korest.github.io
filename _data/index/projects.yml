@@ -1,7 +1,0 @@
-- name: "Crowdfunding platform"
-  technologies: "Java 8, Spring Cloud, Spring Data REST, Spring Security, Spring Data, Spring MVC,
-   Spring AOP, MongoDb, Gradle, Lombok, Jira, Git, Jenkins, Slack"
-- name: "Switzerland shopping mall loyalty system"
-  technologies: "Java 8, Spring Data REST, Spring Data, Spring MVC, Spring REST
-Docs, Spring AOP, Spring Social, MongoDb, Amazon S3, Amazon SNS, Gradle,
-Gatling, Lombok, Jira, Git, Jenkins, Slack."

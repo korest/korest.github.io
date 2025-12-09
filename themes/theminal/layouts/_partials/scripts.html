@@ -1,0 +1,21 @@
+{{/* Terminal Widget Script */}}
+{{ $terminal := resources.Get "js/terminal.js" | minify | fingerprint }}
+<script src="{{ $terminal.RelPermalink }}" defer></script>
+
+{{/* Syntax Highlighting - Optional */}}
+{{ if site.Params.syntaxHighlighting }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+{{ end }}
+
+{{/* Google Analytics - Optional */}}
+{{ with site.Params.googleAnalytics }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ . }}');
+</script>
+{{ end }}

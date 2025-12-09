@@ -1,4 +1,0 @@
-# Development configuration override
-# Use with: bundle exec jekyll serve --config _config.yml,_config_dev.yml
-
-url: http://localhost:4000

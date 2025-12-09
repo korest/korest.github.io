@@ -1,0 +1,104 @@
+{{ define "main" }}
+{{/* Command prompt */}}
+<div class="prompt">
+  <span class="prompt-user">{{ site.Params.promptUser | default "visitor" }}</span>
+  <span class="prompt-separator">@</span>
+  <span class="prompt-path">{{ site.Params.promptHost | default "blog" }}</span>
+  <span class="prompt-symbol">$</span>
+  <span>cat ./articles/{{ .File.BaseFileName }}.md</span>
+</div>
+
+{{/* Article header */}}
+<article class="article">
+  <header>
+    <h1 style="color: var(--accent-cyan); margin: 16px 0;">{{ .Title }}</h1>
+
+    <div class="article-meta">
+      <span>{{ .Date.Format "January 2, 2006" }}</span>
+      {{ with .Params.author }}<span>by {{ . }}</span>{{ end }}
+      <span>{{ .ReadingTime }} min read</span>
+    </div>
+
+    {{ with .Params.tags }}
+    <div class="article-tags" style="margin-bottom: 16px;">
+      {{ range . }}
+      <a href="{{ "articles/tags/" | absURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </header>
+
+  {{/* Article content */}}
+  <div class="article-content">
+    {{ .Content }}
+  </div>
+
+  {{/* Article footer */}}
+  <footer style="margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border-color);">
+    {{/* Navigation */}}
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+      {{ with .PrevInSection }}
+      <a href="{{ .RelPermalink }}" style="color: var(--text-primary);">
+        ← {{ .Title }}
+      </a>
+      {{ else }}
+      <span></span>
+      {{ end }}
+
+      {{ with .NextInSection }}
+      <a href="{{ .RelPermalink }}" style="color: var(--text-primary);">
+        {{ .Title }} →
+      </a>
+      {{ end }}
+    </div>
+
+    {{/* Back to articles */}}
+    <div style="margin-top: 16px;">
+      <a href="{{ "articles/" | absURL }}">← Back to all articles</a>
+    </div>
+  </footer>
+</article>
+
+{{/* Comments - Disqus */}}
+{{ if and site.Params.disqusShortname (ne .Params.comments false) }}
+<div class="comments-section">
+  <h3># Comments</h3>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "{{ .Permalink }}";
+      this.page.identifier = "{{ .RelPermalink }}";
+    };
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://{{ site.Params.disqusShortname }}.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+{{ end }}
+
+{{/* Comments - Giscus (GitHub Discussions) */}}
+{{ if site.Params.giscus.repo }}
+<div class="comments-section">
+  <h3># Comments</h3>
+  <script src="https://giscus.app/client.js"
+    data-repo="{{ site.Params.giscus.repo }}"
+    data-repo-id="{{ site.Params.giscus.repoId }}"
+    data-category="{{ site.Params.giscus.category | default "Announcements" }}"
+    data-category-id="{{ site.Params.giscus.categoryId }}"
+    data-mapping="{{ site.Params.giscus.mapping | default "pathname" }}"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="{{ site.Language.LanguageCode | default "en" }}"
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
+{{ end }}
+{{ end }}

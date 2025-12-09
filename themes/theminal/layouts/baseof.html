@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode | default "en" }}" dir="{{ or site.Language.LanguageDirection "ltr" }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <div class="terminal-window">
+    {{/* Title Bar - Original design with theme toggle */}}
+    <div class="terminal-titlebar">
+      <div class="window-controls">
+        <span class="window-ctrl close"></span>
+        <span class="window-ctrl minimize"></span>
+        <span class="window-ctrl maximize"></span>
+      </div>
+      <div class="terminal-title">{{ site.Title | default "Terminal" }} : {{ .Title | default "~" }}</div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">{{ if eq (site.Params.defaultTheme | default "dark") "light" }}*{{ else }}@{{ end }}</span>
+        <span>theme</span>
+      </button>
+    </div>
+
+    {{/* Tab Navigation */}}
+    {{ partial "tabs.html" . }}
+
+    {{/* Terminal Body */}}
+    <main class="terminal-body">
+      {{ block "main" . }}{{ end }}
+    </main>
+
+    {{/* Footer */}}
+    {{ partial "footer.html" . }}
+  </div>
+
+  {{/* Theme initialization - runs before other scripts to prevent flash */}}
+  <script>
+    (function() {
+      var defaultTheme = '{{ site.Params.defaultTheme | default "dark" }}';
+      var savedTheme = localStorage.getItem('theminal-theme');
+      var theme = savedTheme || defaultTheme;
+      if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  {{ partial "scripts.html" . }}
+</body>
+</html>

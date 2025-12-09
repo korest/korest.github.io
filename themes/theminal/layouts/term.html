@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{/* Command prompt */}}
+<div class="prompt">
+  <span class="prompt-user">{{ site.Params.promptUser | default "visitor" }}</span>
+  <span class="prompt-separator">@</span>
+  <span class="prompt-path">{{ site.Params.promptHost | default "blog" }}</span>
+  <span class="prompt-symbol">$</span>
+  <span>ls -la ./articles --filter tag:{{ .Title }}</span>
+</div>
+
+{{/* Results count */}}
+<div class="output" style="margin: 12px 0;">
+  <span style="color: var(--accent-green);">Found {{ len .Pages }} article{{ if ne (len .Pages) 1 }}s{{ end }}</span> tagged with <span style="color: var(--accent-yellow);">"{{ .Title }}"</span>
+</div>
+
+{{/* Articles list */}}
+<div class="articles-list">
+  {{ range .Pages }}
+  <div class="article-item">
+    <span class="article-date">{{ .Date.Format "2006-01-02" }}</span>
+    <span class="article-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
+    {{ with .Params.tags }}
+    <div class="article-tags">
+      {{ range first 2 . }}
+      <span class="tag">{{ . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+
+{{/* Back link */}}
+<div class="output" style="margin-top: 24px;">
+  <a href="{{ "articles/" | absURL }}">← Back to all articles</a>
+</div>
+{{ end }}
