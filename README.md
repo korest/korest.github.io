@@ -1,17 +1,15 @@
 # orestkyrylchuk.com
 
-Personal blog powered by Jekyll.
+Personal blog powered by [Hugo](https://gohugo.io/) with the [Theminal](https://github.com/korest/theminal) theme.
 
 ## Development
 
-To run the site locally with proper localhost URLs:
-
 ```bash
-bundle exec jekyll serve --config _config.yml,_config_dev.yml
+hugo server
 ```
 
-This will override the production URL with `http://localhost:4000` for local development.
+Site runs at http://localhost:1313/
 
-## Production
+## Deployment
 
-The site is automatically deployed to GitHub Pages using the main `_config.yml` configuration.
+Automatically deployed to GitHub Pages via GitHub Actions on push to `master`.
