@@ -65,18 +65,18 @@ theme = 'theminal'
   syntaxHighlighting = true
 
   # Show "Powered by Hugo & Theminal" in footer
-  showPoweredBy = true
-
-  # Social links
-  [params.social]
-    github = "korest"
-    linkedin = "orest-kyrylchuk-3718983b"
+  showPoweredBy = false
 
   # Google Analytics
   googleAnalytics = "UA-124218867-1"
 
   # Comments - Disqus
   disqusShortname = "orestkyrylchuk"
+
+  # Social links
+  [params.social]
+    github = "korest"
+    linkedin = "orest-kyrylchuk-3718983b"
 
 # ===========================================
 # MARKUP CONFIGURATION
