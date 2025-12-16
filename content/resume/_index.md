@@ -1,5 +1,5 @@
 +++
-title = 'Resume'
+title = 'Résumé'
 date = 2025-12-08
 draft = false
 
@@ -12,7 +12,7 @@ draft = false
   company = "Facebook/Meta"
   url = "https://www.meta.com/"
   startDate = "September 2021"
-  description = "Building scalable distributed systems and services."
+  description = "Developer Infrastructure"
 
 [[params.experience]]
   position = "Software Development Engineer"
@@ -28,7 +28,7 @@ draft = false
   url = "http://www.n-ix.com/"
   startDate = "October 2016"
   endDate = "December 2017"
-  description = "Full-stack development and software engineering."
+  description = "Software development and engineering."
 
 [[params.experience]]
   position = "Software Engineer"
@@ -39,7 +39,7 @@ draft = false
   description = "Software development and engineering."
 
 [[params.education]]
-  degree = "Applied Mathematics and Informatics"
+  degree = "M.S.,Applied Mathematics and Informatics"
   institution = "Lviv Ivan Franko National University"
   url = "http://www.lnu.edu.ua/"
   startDate = "2009"
